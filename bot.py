@@ -66,7 +66,7 @@ async def op(_, m :Message):
     ]
 )
     add_user(m.from_user.id)
-    await m.reply_photo("https://graph.org/file/b1ef3d920bf1b268a7c03-247e42fbfb5c082bdd.jpg", caption="**🤗 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powered By : @Sk_entertains 👀 __**".format(m.from_user.mention, "https://t.me/"), reply_markup=keyboard)
+    await m.reply_photo("https://graph.org/file/b1ef3d920bf1b268a7c03-247e42fbfb5c082bdd.jpg", caption="**🤗 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powered By : @lakkisbots 👀 __**".format(m.from_user.mention, "https://t.me/lakkisbots"), reply_markup=keyboard)
     
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
