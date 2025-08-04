@@ -72,10 +72,12 @@ async def op(_, m :Message):
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 @app.on_callback_query(filters.regex("chk"))
-async def chk(_, cb : CallbackQu@Auto_Request_accept_reboter(cfg.CHID, cb.from_user.id)
+async def chk(_, cb : CallbackQuery):
+    try:
+        await app.get_chat_member(cfg.CHID, cb.from_user.id)
     except:
         await cb.answer("🙅‍♂️ You are not joined my channel first join channel then check again. 🙅‍♂️", show_alert=True)
-        return 
+        return
     keyboard = InlineKeyboardMarkup(
     [
         [
