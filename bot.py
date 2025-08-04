@@ -26,7 +26,7 @@ async def approve(_, m : Message):
     try:
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
-        await app.send_message(kk.id, "**😘 Hello {}!\nWelcome To {}\n\n__Powerd By : @Sk_entertains __**".format(m.from_user.mention, m.chat.title))
+        await app.send_message(kk.id, "**😘 Hello {}!\nWelcome To {}\n\n__Powerd By : @lakkisbots __**".format(m.from_user.mention, m.chat.title))
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
         print("user isn't start bot(means group)")
@@ -54,11 +54,14 @@ async def op(_, m :Message):
         await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join My Update Channel To Use Me 🫣.If You Joined The Channel Then Click On Check Again Button To Confirm 🙈.**", reply_markup=key)
         return 
     keyboard = InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton("🗯 Channel", url="https://t.me/Anime_spectators"),
-            InlineKeyboardButton("💬 Support", url="https://t.me/+PeIhuikiOkliOTRl")
-        ]]
-    )
+    [
+        [InlineKeyboardButton("➕ Add Me To Group", url="https://t.me/Auto_Request_accept_rebot?startgroup=true")],
+        [
+            InlineKeyboardButton("🗯 Channel", url="https://t.me/lakkisbots"),
+            InlineKeyboardButton("💬 Support", url="https://t.me/lakkis_support")
+        ]
+    ]
+)
     add_user(m.from_user.id)
     await m.reply_photo("https://envs.sh/7pC.jpg", caption="**🤗 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powered By : @Sk_entertains 👀 __**".format(m.from_user.mention, "https://t.me/"), reply_markup=keyboard)
     
@@ -73,13 +76,16 @@ async def chk(_, cb : CallbackQuery):
         await cb.answer("🙅‍♂️ You are not joined my channel first join channel then check again. 🙅‍♂️", show_alert=True)
         return 
     keyboard = InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton("🗯 Channel", url="https://t.me/Anime_spectators"),
-            InlineKeyboardButton("💬 Support", url="https://t.me/+PeIhuikiOkliOTRl")
-        ]]
-    )
+    [
+        [InlineKeyboardButton("➕ Add Me To Group", url="https://t.me/Auto_Request_accept_rebot?startgroup=true")],
+        [
+            InlineKeyboardButton("🗯 Channel", url="https://t.me/lakkisbots"),
+            InlineKeyboardButton("💬 Support", url="https://t.me/lakkis_support")
+        ]
+    ]
+)
     add_user(m.from_user.id)
-    await cb.edit_text(text="**🤗 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powered By : @Sk_entertains 👀 __**".format(cb.from_user.mention, "https://t.me/"), reply_markup=keyboard)
+    await cb.edit_text(text="**🤗 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powered By : @lakkisbots 👀 __**".format(cb.from_user.mention, "https://t.me/lakkisbots"), reply_markup=keyboard)
     
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ info ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
